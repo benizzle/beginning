@@ -31,7 +31,7 @@ namespace HelloWorld
             }
             */
 
-            //While Bedingung
+            /*While Bedingung
             List<int> myNumberList = new List<int>();
 
             Console.WriteLine("Sage mir wie viele Zahlen du in deine Liste hinzufügen möchtest!");
@@ -44,6 +44,24 @@ namespace HelloWorld
             }
 
             //Summiere alle Zahlen auf
+            int ergebnis = 0;
+            foreach(int zahl in myNumberList)
+            {
+                ergebnis += zahl;
+            }
+            Console.WriteLine($"Das Ergebnis ist {ergebnis}");
+            */
+
+            //Do While Bedingung
+            List<int> myNumberList = new List<int>();
+            int user_zahl = 0;
+            do
+            {
+                Console.WriteLine("Gebe mir eine Zahl");
+                user_zahl = Convert.ToInt32(Console.ReadLine());
+                myNumberList.Add(user_zahl);
+            }while(user_zahl > 0);
+
             int ergebnis = 0;
             foreach(int zahl in myNumberList)
             {
