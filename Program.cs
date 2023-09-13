@@ -14,7 +14,7 @@ namespace HelloWorld
             }
             */
 
-            //For Each
+            /*For Each
             string[] emails = new string[]
             {
                 "ben@tecalliance.net",
@@ -29,6 +29,27 @@ namespace HelloWorld
             {
                 Console.WriteLine($"Die Email lautet: {emails[position]}");
             }
+            */
+
+            //While Bedingung
+            List<int> myNumberList = new List<int>();
+
+            Console.WriteLine("Sage mir wie viele Zahlen du in deine Liste hinzufügen möchtest!");
+            int amountNumbers = Convert.ToInt32(Console.ReadLine());
+
+            while(myNumberList.Count < amountNumbers)
+            {
+                Console.WriteLine("Gebe mir eine Zahl");
+                myNumberList.Add(Convert.ToInt32(Console.ReadLine()));
+            }
+
+            //Summiere alle Zahlen auf
+            int ergebnis = 0;
+            foreach(int zahl in myNumberList)
+            {
+                ergebnis += zahl;
+            }
+            Console.WriteLine($"Das Ergebnis ist {ergebnis}");
         }
     }
 }
