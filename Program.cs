@@ -86,6 +86,17 @@ namespace HelloWorld
             int ergebnis6 = (zahl2 + zahl2) * 2;
             Console.WriteLine(ergebnis6);
 
+            double double1 = 50.50;
+            double double2 = 30.30;
+
+            double doubleergebnis = double1 / double2;
+            Console.WriteLine(doubleergebnis);
+
+            float float1 = 50.50f;
+            float float2 = 30.30f;
+
+            double floatergebnis = float1 / float2;
+            Console.WriteLine(floatergebnis);
 
         }
     }
