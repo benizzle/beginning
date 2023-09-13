@@ -7,6 +7,7 @@ namespace HelloWorld
     {
         static void Main(string[] args)
         {
+            /*
             string example_text = " This is a test ";
 
             Console.WriteLine(example_text.ToLower());
@@ -27,7 +28,23 @@ namespace HelloWorld
 
             int example_number = 56;
             example_number.equals();
-            
+            */
+
+            Console.WriteLine("Gebe mir deinen Namen!");
+            string name = Console.ReadLine();
+
+            if (name.Length > 10)
+            {
+                Console.WriteLine("Oh der Name ist aber lang");
+            }
+            else if (name.Length > 5)
+            {
+                Console.WriteLine("Der Name ist mittellang");
+            }
+            else
+            {
+                Console.WriteLine("Der ist ja kurz");
+            }   
         }
     }
 }
