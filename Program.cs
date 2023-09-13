@@ -5,19 +5,17 @@
         static void Main(string[] args)
         {
             //Frage den Nutzer nach der ersten Zahl
-            Console.WriteLine("Nenne eine Zahl:");
-            string ersteZahl = Console.ReadLine();
-
-            //Fragen den Nutzer nach der zweiten Zahl
-            Console.WriteLine("Nenne eine weitere Zahl:");
-            string zweiteZahl = Console.ReadLine();
+            Console.WriteLine("Nenne eine Zahl!");
+            string zahl1 = Console.ReadLine();
             
-            int zahl1 = Convert.ToInt16(ersteZahl);
-            int zahl2 = Convert.ToInt16(zweiteZahl);
-            int ergebnis = zahl1 + zahl2;
+            //Fragen den Nutzer nach der zweiten Zahl
+            Console.WriteLine("Nenne eine Zahl die du von " + zahl1 + " subtrahieren willst!");
+            string zahl2 = Console.ReadLine();
 
-            //Gebe das Ergebnis auf der Console aus
-            Console.WriteLine($"Das Ergebnis ist: {zahl1} + {zahl2} = {ergebnis}");
+            int ergebnis = Convert.ToInt16(zahl1) - Convert.ToInt16(zahl2);            
+  
+            //Gebe das Ergebnis auf der Console aus SUBTRAKTION
+            Console.WriteLine($"Dein Ergbnis: {zahl1} - {zahl2} = {ergebnis}");
         }
     }
 }
