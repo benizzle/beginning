@@ -7,48 +7,32 @@ namespace HelloWorld
     {
         static void Main(string[] args)
         {
-            string text = "Das ist ein Text";
-            Console.WriteLine(text);
-            int zahl = 21;
-            Console.WriteLine(zahl);
-            double kommazahl = 21.3;
-            Console.WriteLine(kommazahl);
-            float weitereFlieskommaZahl = 21.333F;
-            Console.WriteLine(weitereFlieskommaZahl);
-            decimal flieskomma = 24.4M;
-            Console.WriteLine(flieskomma);
-            
-            bool wahrheitswert = true;
-            Console.WriteLine(wahrheitswert);
-            bool anders = false;
-            Console.WriteLine(anders);
-            
-            char buchstabe = (char)48;
-            Console.WriteLine(buchstabe);
+            /*
+            int myNum = 9;
+            double myDoubleNum = 8.99;
+            char myLetter = 'A';
+            bool myBoolean = false;
+            string myText = "Hello World";
+            */
 
-            //ASCII Chart 48 = 0
-            long langezahl = 123456753156456456;
-            Console.WriteLine(langezahl);
-            short kurzezahl = 30000;
-            Console.WriteLine(kurzezahl);
+            float zahl1 = 24.2314f;
+            float zahl2 = 1.12222223262313f;
+            float ergebnis = zahl1 + zahl2;
 
-            uint positivezahl = 123;
-            Console.WriteLine(positivezahl);
+            Console.WriteLine($"Mein Ergebnis ist {zahl1} + {zahl2} = {ergebnis}");
 
-            
-            string[] myArray = new string[10];
-            myArray[0] = "erster Wert";
-            myArray[9] = "letzter Wert";
 
-            Console.WriteLine(myArray[0]);
-            Console.WriteLine(myArray[9]);
+            int x,y,z;
+            x = y = z = 50;
 
-            List<string> myList = new List<string>();
-            
-            myList.Add("Benni");
+            Console.WriteLine(x + y + z);
 
-            Console.WriteLine(myList[0]);
 
+            int ganzZahl = 0;
+            double myDouble = 5.5;
+            Console.WriteLine(myDouble);
+            ganzZahl = (int)myDouble;
+            Console.WriteLine(ganzZahl);
         }
     }
 }
