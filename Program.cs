@@ -21,14 +21,11 @@ namespace HelloWorld
             //Aufgabe 6c: Zähle wie oft der Buchstabe a vorkommt.
             //Aufgabe 6d: Gebe nur einen Teil des Textes aus. Ab Position 3, und dann die nächsten 5 Buchstaben
 
-
-            //A6c
+            //A6d
             Console.WriteLine("Gebe einen Text ein: ");
-            string eingabe = Console.ReadLine();
+            string eingabe2 = Console.ReadLine();
 
-            int count = eingabe.Split('a').Length - 1;
-
-            Console.WriteLine($" Es gibt {count} Buchstaben 'a'!");
+            Console.WriteLine(eingabe2.Substring(2,5));
             
 
         }
