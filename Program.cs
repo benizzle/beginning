@@ -8,31 +8,42 @@ namespace HelloWorld
     {
         static void Main(string[] args)
         {
-            //Aufgabe 11: Frage den Nutzer nach einer Zahl und zähle von dieser Rückwärts bis 0
-            //Aufgabe 12: Laufe mit einer For-Schleife über die Namen der Azubis & Studenten. Wenn der Name des Azubis ein „e“ enthält, gebe den Namen aus, ansonsten nicht.
-            //Aufgabe 12b: Wiederhole das Ganze und lass den Nutzer einen Buchstaben bestimmen, nach dem gesucht wird.
-            //Aufgabe 13: Frage den Nutzer  wie viele Einträge er in einem int-Array haben möchte. Initialisiere ein int-Array von dieser Größe und befülle dieses Int Array in einer Schleife, 
-            //              indem du den Nutzer jedes Mal frägst, welche Zahl eingetragen werden soll.  
-            //              Gebe anschließend alle Zahlen nacheinander nochmal aus
-            //Aufgabe 13b: Gehe das Int-array durch und gebe den Maximal-Wert aus, Minimal-Wert und den Durchschnitt.
+            /*
+            Aufgabe: Fizz-Buzz-Spiel
 
-            //A13
-
-            Console.WriteLine("Wie groß soll dein int-Array sein?");
-            int numm = Convert.ToInt16(Console.ReadLine());
-
-            int[] myarray = new int[]{};
-
-            for(int i=0; i < numm; i++)
-            {
-                Console.WriteLine("Nenne eine weiter Zahl zum füllen!");
-                int next = Convert.ToInt32(Console.ReadLine());
-                myarray[i] = next;
-            }
-
-
+            Schreibe ein Programm, das eine Zahlenfolge von 1 bis zu einer vom Benutzer festgelegten Obergrenze ausgibt. Dabei gelten folgende Regeln:
+            Wenn die Zahl durch 3 teilbar ist, gib "Fizz" aus anstelle der Zahl.
+            Wenn die Zahl durch 5 teilbar ist, gib "Buzz" aus anstelle der Zahl.
+            Wenn die Zahl sowohl durch 3 als auch durch 5 teilbar ist, gib "FizzBuzz" aus anstelle der Zahl.
+            In allen anderen Fällen gib einfach die Zahl selbst aus.
+            Hier sind einige Beispiele:
+            Wenn die Obergrenze 15 ist, sollte die Ausgabe wie folgt aussehen:
+            Deine Aufgabe besteht darin, den Code zu schreiben, der diese Regeln befolgt und die Zahlenfolge bis zur vom Benutzer festgelegten Obergrenze ausgibt. Viel Erfolg!
+            */
             
+            Console.WriteLine("Nenne eine Zahl!");
+            int eingabe = Convert.ToInt16(Console.ReadLine());
 
+            for(int i=2;i<=eingabe;i++)
+            {
+                if(i % 3 == 0 && i % 5 == 0)
+                {
+                    Console.WriteLine("FizzBuzz");
+                }
+                else if(i % 3 == 0 && i % 5 != 0)
+                {
+                    Console.WriteLine("Fizz");
+                }
+                else if(i % 5 == 0 && i % 3 != 0)
+                {
+                    Console.WriteLine("Buzz");
+                }
+                else
+                {
+                    Console.WriteLine(i);
+                }
+                
+            }
             
         }
     }
