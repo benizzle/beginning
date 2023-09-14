@@ -21,10 +21,15 @@ namespace HelloWorld
             //Aufgabe 6c: Zähle wie oft der Buchstabe a vorkommt.
             //Aufgabe 6d: Gebe nur einen Teil des Textes aus. Ab Position 3, und dann die nächsten 5 Buchstaben
 
-            //A1
-            int zahl1 = 1;
-            int zahl2 = 2;
-            Console.WriteLine($" Die zahlen lauten: {zahl1} {zahl2}");
+            //A2
+            Console.WriteLine("Gebe eine Zahlen an: ");
+            int zahl1 = Convert.ToInt16(Console.ReadLine());
+
+            Console.WriteLine("Gebe eine weitere Zahlen an: ");
+            int zahl2 = Convert.ToInt16(Console.ReadLine());
+
+            int ergebnis = zahl1 + zahl2;
+            Console.WriteLine($"Die Summe ist: {zahl1} + {zahl2} = {ergebnis}");
         }
     }
 }
