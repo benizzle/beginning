@@ -16,15 +16,18 @@ namespace HelloWorld
             //              Gebe anschließend alle Zahlen nacheinander nochmal aus
             //Aufgabe 13b: Gehe das Int-array durch und gebe den Maximal-Wert aus, Minimal-Wert und den Durchschnitt.
 
-            //A11
+            //A12
 
-            Console.WriteLine("Nenne eine Zahl!");
-            int zahl = Convert.ToInt16(Console.ReadLine());
+            string[] azubis = new string[] {"Niklas", "Linh", "Zhanna", "Lea", "Hans", "Luca", "Katharina", "Benjamin"};
             
-            while(zahl >= 0)
+            char ch = 'e';
+
+            for(int i = 0; i < azubis.Count(); i++)
             {
-                Console.WriteLine($"Folge: {zahl}");
-                zahl--;
+                if(azubis[i].Contains(ch))
+                {
+                    Console.WriteLine(azubis[i]);
+                }
             }
         }
     }
