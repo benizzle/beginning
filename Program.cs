@@ -29,6 +29,17 @@ namespace HelloWorld
                     Console.WriteLine(azubis[i]);
                 }
             }
+
+            Console.WriteLine("Nenne einen anderen Buchstaben");
+            ch = Convert.ToChar(Console.ReadLine());
+
+            for(int i = 0; i < azubis.Count(); i++)
+            {
+                if(azubis[i].Contains(ch))
+                {
+                    Console.WriteLine(azubis[i]);
+                }
+            }
         }
     }
 }
