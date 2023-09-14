@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel;
+using System.Diagnostics.Metrics;
 using System.Runtime.CompilerServices;
 
 namespace HelloWorld
@@ -7,67 +8,19 @@ namespace HelloWorld
     {
         static void Main(string[] args)
         {
-            /*For Loop - For Schleife
-            for(int zaehlvariable=0;zaehlvariable<10;zaehlvariable++)
-            {
-                Console.WriteLine(zaehlvariable);
-            }
-            */
-
-            /*For Each
-            string[] emails = new string[]
-            {
-                "ben@tecalliance.net",
-                "abc@tecalliance.net",
-                "xyz@tecalliance.net"
-            };
-            foreach(string email in emails)
-            {
-                Console.WriteLine($"Die Email lautet: {email}");
-            }
-            for(int position=0;position<emails.Length;position++)
-            {
-                Console.WriteLine($"Die Email lautet: {emails[position]}");
-            }
-            */
-
-            /*While Bedingung
-            List<int> myNumberList = new List<int>();
-
-            Console.WriteLine("Sage mir wie viele Zahlen du in deine Liste hinzufügen möchtest!");
-            int amountNumbers = Convert.ToInt32(Console.ReadLine());
-
-            while(myNumberList.Count < amountNumbers)
-            {
-                Console.WriteLine("Gebe mir eine Zahl");
-                myNumberList.Add(Convert.ToInt32(Console.ReadLine()));
-            }
-
-            //Summiere alle Zahlen auf
-            int ergebnis = 0;
-            foreach(int zahl in myNumberList)
-            {
-                ergebnis += zahl;
-            }
-            Console.WriteLine($"Das Ergebnis ist {ergebnis}");
-            */
-
-            //Do While Bedingung
-            List<int> myNumberList = new List<int>();
-            int user_zahl = 0;
-            do
-            {
-                Console.WriteLine("Gebe mir eine Zahl");
-                user_zahl = Convert.ToInt32(Console.ReadLine());
-                myNumberList.Add(user_zahl);
-            }while(user_zahl > 0);
-
-            int ergebnis = 0;
-            foreach(int zahl in myNumberList)
-            {
-                ergebnis += zahl;
-            }
-            Console.WriteLine($"Das Ergebnis ist {ergebnis}");
+            //Aufgabe 1: Initialisiere 2 Zahlen und gebe die Summe auf der Console aus
+            //Aufgabe 2: Lasse den Nutzer zwei Zahlen eingeben und gebe die Summe auf der Console aus
+            //Aufgabe 3: Lasse den Nutzer eine Zahl eingeben und gebe alle Zahlen
+            //           bis einschließlich der eingegeben Zahl aus
+            //Aufgabe 4: Lasse den Nutzer eine Zahl eingeben und gebe nur die geraden Zahlen aus.
+            //           (Hinweis: Modulo operator. => Geteilt durch 2,
+            //                  wenn der Rest 0 ist, ist die Zahl gerade)
+            //Aufgabe 5: Lasse den Nutzer eine Zahl eingeben und berechne von dieser Zahl die Fakultät.
+            //Aufgabe 6a: Lasse den Nutzer einen Text eingeben und gebe den Text nur in Großbuchstaben aus
+            //Aufgabe 6b: Gebe die Länge des Textes aus
+            //Aufgabe 6c: Zähle wie oft der Buchstabe a vorkommt.
+            //Aufgabe 6d: Gebe nur einen Teil des Textes aus. Ab Position 3, und dann die nächsten 5 Buchstaben
+            
         }
     }
 }
