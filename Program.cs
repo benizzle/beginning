@@ -21,13 +21,12 @@ namespace HelloWorld
             //Aufgabe 6c: Zähle wie oft der Buchstabe a vorkommt.
             //Aufgabe 6d: Gebe nur einen Teil des Textes aus. Ab Position 3, und dann die nächsten 5 Buchstaben
 
-            //A6d
-            Console.WriteLine("Gebe einen Text ein: ");
-            string eingabe2 = Console.ReadLine();
-
-            Console.WriteLine(eingabe2.Substring(2,5));
+            //Aufgabe 7: Frage den Nutzer nach einem Text und ersetze im Text alle vorkommenden „U“ und „u“ durch „G“ und „g“
+            //Aufgabe 8: Frage den Nutzer nach einer Texteingabe und fülle diese mit bis zu 20 Stellen mit einem y von links auf
+            //Aufgabe 9: Frage den Nutzer nach einer Eingabe mit Semikolons ( ; ) und Splitte die Eingabe an diesem Zeichen. Gebe die einzelnen Werte auf der Console aus.
+            //Aufgabe 10: Frage den Nutzer nach einer Eingabe und überprüfe die Texteingabe des Nutzers, ob die Zeichen „abc“ in der Eingabe enthalten sind. Gebe true oder false auf der Konsole aus.
             
-
+            
         }
     }
 }
