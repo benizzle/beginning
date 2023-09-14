@@ -21,24 +21,22 @@ namespace HelloWorld
             //Aufgabe 6c: Zähle wie oft der Buchstabe a vorkommt.
             //Aufgabe 6d: Gebe nur einen Teil des Textes aus. Ab Position 3, und dann die nächsten 5 Buchstaben
 
-            //A4
+            //A5
             Console.WriteLine("Gebe eine Zahlen an: ");
             int eingabe = Convert.ToInt16(Console.ReadLine());
 
-            int wert = eingabe % 2;
+            int zaehler = 1;
+            long ergebnis = 1;
 
-            if(wert == 0)
+            while(zaehler <= eingabe)
             {
-                while(wert <= eingabe)
-                {
-                    Console.WriteLine($"Deine geraden Zahlen sind: {wert}");
-                    wert += 2;
-                }
+                ergebnis *= zaehler;
+                Console.WriteLine($"* {zaehler}");
+                zaehler++;
             }
-            else
-            {
-                Console.WriteLine("Ungerade");
-            }
+            
+            Console.WriteLine($"Das Ergebnis ist: {ergebnis}");
+
         }
     }
 }
