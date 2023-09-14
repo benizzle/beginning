@@ -20,7 +20,11 @@ namespace HelloWorld
             //Aufgabe 6b: Gebe die Länge des Textes aus
             //Aufgabe 6c: Zähle wie oft der Buchstabe a vorkommt.
             //Aufgabe 6d: Gebe nur einen Teil des Textes aus. Ab Position 3, und dann die nächsten 5 Buchstaben
-            
+
+            //A1
+            int zahl1 = 1;
+            int zahl2 = 2;
+            Console.WriteLine($" Die zahlen lauten: {zahl1} {zahl2}");
         }
     }
 }
