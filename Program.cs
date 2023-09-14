@@ -26,17 +26,14 @@ namespace HelloWorld
             //Aufgabe 9: Frage den Nutzer nach einer Eingabe mit Semikolons ( ; ) und Splitte die Eingabe an diesem Zeichen. Gebe die einzelnen Werte auf der Console aus.
             //Aufgabe 10: Frage den Nutzer nach einer Eingabe und überprüfe die Texteingabe des Nutzers, ob die Zeichen „abc“ in der Eingabe enthalten sind. Gebe true oder false auf der Konsole aus.
             
-            //A9
+            //A10
 
-            Console.WriteLine("Schreibe mehrere Themen auf und trenne sie mit \";\"!");
+            Console.WriteLine("Schreibe einen tollen Text!");
             string eingabe = Console.ReadLine();
 
-            string[] list = eingabe.Split(";");
+            bool ergebnis = eingabe.Equals("abc");
 
-            foreach(string item in list)
-            {  
-                Console.WriteLine(item);
-            }
+            Console.WriteLine(ergebnis);
 
         }
     }
