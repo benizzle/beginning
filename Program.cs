@@ -14,33 +14,32 @@ namespace HelloWorld
 
             do{
             Console.WriteLine("Willst du addieren [+], subtrahieren [-], multiplizieren [*] oder dividieren [/]?");
-            string eingabe = Console.ReadLine();
+            eingabe = Console.ReadLine();
             }while(eingabe != "+" && eingabe != "-" && eingabe != "*" && eingabe != "/");
 
             int a = 30;
             int b = 20;
-            int e = 0;
 
             switch(eingabe)
             {
                 case "+":
-                    Console.WriteLine(a+b);
+                    Addition(a,b);
                     break;
                 case "-":
-                    Console.WriteLine(a-b);
+                    Subtract(a,b);
                     break;
                 case "*":
-                    Console.WriteLine(a*b);
+                    Multiply(a,b);
                     break;
                 case "/":
-                    Console.WriteLine(a/b);
+                    Division(a,b);
                     break;
                 default:
                     Console.WriteLine("Ich kenne diesen Befehl nicht!");
                     break;
             }
+
         }
-    
         static void Addition(int zahl1, int zahl2)
         {
             Console.WriteLine(zahl1 + zahl2);
@@ -51,7 +50,7 @@ namespace HelloWorld
             Console.WriteLine(zahl1 - zahl2);
         }
 
-        static void Multiplication(int zahl1, int zahl2)
+        static void Multiply(int zahl1, int zahl2)
         {
             Console.WriteLine(zahl1 * zahl2);
         }
@@ -60,6 +59,5 @@ namespace HelloWorld
         {
             Console.WriteLine(zahl1 / zahl2);
         }
-    
     }
 }
