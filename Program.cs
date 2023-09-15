@@ -9,33 +9,35 @@ namespace HelloWorld
     {
         static void Main(string[] args)
         {
+            
+            string eingabe = "";
 
+            do{
             Console.WriteLine("Willst du addieren [+], subtrahieren [-], multiplizieren [*] oder dividieren [/]?");
             string eingabe = Console.ReadLine();
+            }while(eingabe != "+" && eingabe != "-" && eingabe != "*" && eingabe != "/");
 
             int a = 30;
             int b = 20;
             int e = 0;
 
-            if(eingabe == "+" || eingabe == "addieren")
+            switch(eingabe)
             {
-                e = a + b;
-                Console.WriteLine($"Ergebnis: {a} + {b} = {e}");
-            }
-            if(eingabe == "-" || eingabe == "subtrahieren")
-            {
-                e = a - b;
-                Console.WriteLine($"Ergebnis: {a} - {b} = {e}");
-            }
-            if(eingabe == "*" || eingabe == "multiplizieren")
-            {
-                e = a * b;
-                Console.WriteLine($"Ergebnis: {a} * {b} = {e}");
-            }
-            if(eingabe == "/" || eingabe == "dividieren")
-            {
-                e = a / b;
-                Console.WriteLine($"Ergebnis: {a} / {b} = {e}");
+                case "+":
+                    Console.WriteLine(a+b);
+                    break;
+                case "-":
+                    Console.WriteLine(a-b);
+                    break;
+                case "*":
+                    Console.WriteLine(a*b);
+                    break;
+                case "/":
+                    Console.WriteLine(a/b);
+                    break;
+                default:
+                    Console.WriteLine("Ich kenne diesen Befehl nicht!");
+                    break;
             }
         }
     }
