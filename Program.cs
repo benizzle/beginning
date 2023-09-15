@@ -9,87 +9,31 @@ namespace HelloWorld
     {
         static void Main(string[] args)
         {
-            
-            string eingabe = "";
+            //Frage den Nutzer wie viele Texte er in einem Array speichern will.
+            //Initialsiere das Array in der gewünschten größe
+            //Lasse den Nutzer das Array nacheinander mit Texten befüllen
+            //Gebe die Texte mit mindestens 20 Zeichen aus, fülle den Text mit Leerzeichen auf von links wenn kleiner 
 
-            do{
-            Console.WriteLine("Willst du addieren [+], subtrahieren [-], multiplizieren [*] oder dividieren [/]?");
-            eingabe = Console.ReadLine();
-            }while(eingabe != "+" && eingabe != "-" && eingabe != "*" && eingabe != "/");
+            Console.WriteLine("Wie viele Texte willst du speichern?");
+            int gr = Convert.ToInt16(Console.ReadLine());
 
-            string a = "30";
-            string b = "20";
+            string[] arr = new string[gr];
+            int i = 0;
 
-            switch(eingabe)
+            while(i < gr)
             {
-                case "+":
-                    int ergebnis = AdditionWithReturn(a,b);
-                    break;
-                case "-":
-                    Subtract(a,b);
-                    break;
-                case "*":
-                    Multiply(a,b);
-                    break;
-                case "/":
-                    Division(a,b);
-                    break;
-                default:
-                    Console.WriteLine("Ich kenne diesen Befehl nicht!");
-                    break;
+                Console.WriteLine("Bitte befüllen!");
+                arr[i] = Console.ReadLine();
+                i++; 
             }
+            
+            int z = 0;
 
-        }
-
-        static int AdditionWithReturn(string zahl1, string zahl2)
-        {
-            int numero1 = Convert.ToInt32(zahl1);
-            int numero2 = Convert.ToInt32(zahl2);
-
-            return numero1 + numero2;
-        }
-        static void Addition(int zahl1, int zahl2)
-        {
-            Console.WriteLine(zahl1 + zahl2);
-        }
-        static void Addition(string zahl1, string zahl2)
-        {
-            int numero1 = Convert.ToInt32(zahl1);
-            int numero2 = Convert.ToInt32(zahl2);
-            Console.WriteLine(numero1 + numero2);
-        }
-
-        static void Subtract(int zahl1, int zahl2)
-        {
-            Console.WriteLine(zahl1 - zahl2);
-        }
-        static void Subtract(string zahl1, string zahl2)
-        {
-            int numero1 = Convert.ToInt32(zahl1);
-            int numero2 = Convert.ToInt32(zahl2);
-            Console.WriteLine(numero1 - numero2);
-        }
-
-        static void Multiply(int zahl1, int zahl2)
-        {
-            Console.WriteLine(zahl1 * zahl2);
-        }
-        static void Multiply(string zahl1, string zahl2)
-        {
-            int numero1 = Convert.ToInt32(zahl1);
-            int numero2 = Convert.ToInt32(zahl2);
-            Console.WriteLine(numero1 * numero2);
-        }
-
-        static void Division(int zahl1, int zahl2)
-        {
-            Console.WriteLine(zahl1 / zahl2);
-        }
-        static void Division(string zahl1, string zahl2)
-        {
-            int numero1 = Convert.ToInt32(zahl1);
-            int numero2 = Convert.ToInt32(zahl2);
-            Console.WriteLine(numero1 / numero2);
+            while(z < gr)
+            {
+                Console.WriteLine(arr[z].PadLeft(20, ' '));
+                z++;
+            }
         }
     }
 }
