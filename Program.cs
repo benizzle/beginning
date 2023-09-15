@@ -9,31 +9,39 @@ namespace HelloWorld
     {
         static void Main(string[] args)
         {
-            //Frage den Nutzer wie viele Texte er in einem Array speichern will.
-            //Initialsiere das Array in der gewünschten größe
-            //Lasse den Nutzer das Array nacheinander mit Texten befüllen
-            //Gebe die Texte mit mindestens 20 Zeichen aus, fülle den Text mit Leerzeichen auf von links wenn kleiner 
+            //Erstelle ein array das Zahlen beinhaltet
+            //Es sollen 5 Zahlen eingegeben werden können
+            //Befülle das Array in einer Schleife durch den Nutzer
+            //Gebe am Ende die:
+            //  - die kleinste Zahl aus
+            //  - die größte Zahl 
+            //  - den Durchschnitt
 
-            Console.WriteLine("Wie viele Texte willst du speichern?");
-            int gr = Convert.ToInt16(Console.ReadLine());
+            int zahl = 5;
 
-            string[] arr = new string[gr];
-            int i = 0;
+            int[] arr = new int[zahl];
 
-            while(i < gr)
+            for(int i=0; i<arr.Length; i++)
             {
-                Console.WriteLine("Bitte befüllen!");
-                arr[i] = Console.ReadLine();
-                i++; 
+                Console.WriteLine($"Befülle Feld {i+1} von {zahl}");
+                arr[i] = Convert.ToInt32(Console.ReadLine());
             }
-            
-            int z = 0;
 
-            while(z < gr)
+            Console.WriteLine("Welche Zahl willst du ausgeben? Kleinste, Groesste oder den Durchschnitt?");
+            string txt = Console.ReadLine();
+            if(txt == "Kleinste")
             {
-                Console.WriteLine(arr[z].PadLeft(20, ' '));
-                z++;
+                Console.WriteLine(arr.Min());
             }
+            else if(txt == "Groesste")
+            {
+                Console.WriteLine(arr.Max());
+            }
+            else if(txt == "Durchschnitt")
+            {
+                Console.WriteLine(arr.Average());
+            }
+
         }
     }
 }
