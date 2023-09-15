@@ -23,7 +23,7 @@ namespace HelloWorld
             switch(eingabe)
             {
                 case "+":
-                    Addition(a,b);
+                    int ergebnis = AdditionWithReturn(a,b);
                     break;
                 case "-":
                     Subtract(a,b);
