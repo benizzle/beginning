@@ -10,7 +10,7 @@ namespace HelloWorld
         static void Main(string[] args)
         {
 
-            Console.WriteLine("Willst du addieren [+] oder subtrahieren [-]?");
+            Console.WriteLine("Willst du addieren [+], subtrahieren [-], multiplizieren [*] oder dividieren [/]?");
             string eingabe = Console.ReadLine();
 
             int a = 30;
@@ -27,7 +27,16 @@ namespace HelloWorld
                 e = a - b;
                 Console.WriteLine($"Ergebnis: {a} - {b} = {e}");
             }
-                
+            if(eingabe == "*" || eingabe == "multiplizieren")
+            {
+                e = a * b;
+                Console.WriteLine($"Ergebnis: {a} * {b} = {e}");
+            }
+            if(eingabe == "/" || eingabe == "dividieren")
+            {
+                e = a / b;
+                Console.WriteLine($"Ergebnis: {a} / {b} = {e}");
+            }
         }
     }
 }
