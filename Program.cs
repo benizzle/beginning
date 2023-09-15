@@ -40,5 +40,26 @@ namespace HelloWorld
                     break;
             }
         }
+    
+        static void Addition(int zahl1, int zahl2)
+        {
+            Console.WriteLine(zahl1 + zahl2);
+        }
+
+        static void Subtract(int zahl1, int zahl2)
+        {
+            Console.WriteLine(zahl1 - zahl2);
+        }
+
+        static void Multiplication(int zahl1, int zahl2)
+        {
+            Console.WriteLine(zahl1 * zahl2);
+        }
+
+        static void Division(int zahl1, int zahl2)
+        {
+            Console.WriteLine(zahl1 / zahl2);
+        }
+    
     }
 }
