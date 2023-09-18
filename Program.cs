@@ -1,7 +1,4 @@
-﻿using System.ComponentModel;
-using System.Diagnostics.Metrics;
-using System.Net;
-using System.Runtime.CompilerServices;
+﻿using System.Globalization;
 
 namespace HelloWorld
 {
@@ -9,15 +6,41 @@ namespace HelloWorld
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Gebe einen Text ein");
-            string eingabe = Console.ReadLine();
+            //Wiederholung
+            //Lasse vom Nutzer einen Text eingeben und gebe folgende Punkte aus
+            //- Länge des Textes
+            //- Anzahl  wie oft Buchstabe h auftaucht            
+
+            Console.WriteLine("Gebe mir einen Text");
+            string eingegebenerText = Console.ReadLine();
+            int laengetext = eingegebenerText.Length;
+            Console.WriteLine("Die Länge des Textes ist " + laengetext);
             
-            Console.WriteLine(eingabe.Length);
+            //Möglichkeit 1
+            //string[] splittedText = eingegebenerText.Split("h");
+            
+            //Möglichkeit 2
+            int count = 0;
+            for(int i = 0;i< eingegebenerText.Length;i++)
+            {
+                if(eingegebenerText[i] == 'h')
+                {
+                    count++;
+                }
+            }
+            Console.WriteLine($"Es gibt {count} h's in deinem Text.");
+           //Möglichkeit 2b
+           foreach(char c in eingegebenerText)
+           {
+                if(c == 'h')
+                {
+                    count++;
+                }
+           }
 
-            string[] splittedText = eingabe.Split('h');
-
-
-            Console.WriteLine(splittedText.Length - 1);
+           //Möglichkeit
+           int numberofh = eingegebenerText.Count(c => c == 'h');
+           Console.WriteLine($"Es gibt {numberofh} h's in deinem Text.");
         }
     }
 }
