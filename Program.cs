@@ -6,18 +6,19 @@ namespace HelloWorld
     {
         static void Main(string[] args)
         {
-            string word = "MissiSsiPpi";
-            Console.WriteLine($"Vorkommnisse zählen bei {word}");
+            //Nutzer soll Zahl eingeben. Anzahl an Sekunden
+            //In Tage Stunden Minuten Sekunden konvertieren
+            //90.061 = 1 tag 1 stunde 1 minute 1 sekunde 86400
 
-            int countm = word.Count(c => c == 'm' || c == 'M');
-            int counti = word.Count(c => c == 'i' || c == 'I');
-            int counts = word.Count(c => c == 's' || c == 'S');
-            int countp = word.Count(c => c == 'p' || c == 'P');
+            Console.WriteLine("Gebe eine Zahl ein!");
+            int eingabe = Convert.ToInt32(Console.ReadLine());
 
-            Console.WriteLine($"m und M: {countm}");
-            Console.WriteLine($"i und I: {counti}");
-            Console.WriteLine($"s und S: {counts}");
-            Console.WriteLine($"p und P: {countp}");
+            int tag = eingabe / 86400;
+            int stunde = (eingabe / 3600) - tag;
+            int minute = (eingabe / 60) - (stunde*60);
+            int sekunde = eingabe % 60;
+
+            Console.WriteLine($"Ergebnis: {tag} Tage {stunde} Stunden {minute} Minuten und {sekunde} Sekunden");
         }
     }
 }
