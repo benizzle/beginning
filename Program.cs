@@ -6,41 +6,18 @@ namespace HelloWorld
     {
         static void Main(string[] args)
         {
-            //Wiederholung
-            //Lasse vom Nutzer einen Text eingeben und gebe folgende Punkte aus
-            //- Länge des Textes
-            //- Anzahl  wie oft Buchstabe h auftaucht            
+            string word = "MissiSsiPpi";
+            Console.WriteLine($"Vorkommnisse zählen bei {word}");
 
-            Console.WriteLine("Gebe mir einen Text");
-            string eingegebenerText = Console.ReadLine();
-            int laengetext = eingegebenerText.Length;
-            Console.WriteLine("Die Länge des Textes ist " + laengetext);
-            
-            //Möglichkeit 1
-            //string[] splittedText = eingegebenerText.Split("h");
-            
-            //Möglichkeit 2
-            int count = 0;
-            for(int i = 0;i< eingegebenerText.Length;i++)
-            {
-                if(eingegebenerText[i] == 'h')
-                {
-                    count++;
-                }
-            }
-            Console.WriteLine($"Es gibt {count} h's in deinem Text.");
-           //Möglichkeit 2b
-           foreach(char c in eingegebenerText)
-           {
-                if(c == 'h')
-                {
-                    count++;
-                }
-           }
+            int countm = word.Count(c => c == 'm' || c == 'M');
+            int counti = word.Count(c => c == 'i' || c == 'I');
+            int counts = word.Count(c => c == 's' || c == 'S');
+            int countp = word.Count(c => c == 'p' || c == 'P');
 
-           //Möglichkeit
-           int numberofh = eingegebenerText.Count(c => c == 'h');
-           Console.WriteLine($"Es gibt {numberofh} h's in deinem Text.");
+            Console.WriteLine($"m und M: {countm}");
+            Console.WriteLine($"i und I: {counti}");
+            Console.WriteLine($"s und S: {counts}");
+            Console.WriteLine($"p und P: {countp}");
         }
     }
 }
