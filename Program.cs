@@ -1,5 +1,4 @@
 ﻿using System.Globalization;
-using System.Net;
 
 namespace HelloWorld
 {
@@ -22,38 +21,38 @@ namespace HelloWorld
             //Das Auto fährt schnell. 
             //Das Auto rast.
             */
-        
-            Console.WriteLine("Gebe deine Geschwindigkeit an!");
-            int eingabe = Convert.ToInt32(Console.ReadLine());
-            string ergebnis = Fahren(eingabe);
-            Console.WriteLine($"Das Auto {ergebnis}");
+            string steht_variable = Fahren(0);
+            string schleicht_variable = Fahren(9);
+            string langsam_variable = Fahren(25);
+            string schnell_variable = Fahren(65);
+            string rast_variable = Fahren(120);
+
+            string base_text = "Das Auto ";
+            Console.WriteLine(base_text + steht_variable);
+            Console.WriteLine(base_text + schleicht_variable);
+            Console.WriteLine(base_text + langsam_variable);
+            Console.WriteLine(base_text + schnell_variable);
+            Console.WriteLine(base_text + rast_variable);
+            Console.WriteLine(base_text + Fahren(-50));
+
         }
 
         static string Fahren(int geschwindigkeit)
         {
-            if(geschwindigkeit==0)
+            switch(geschwindigkeit)
             {
-                return "steht.";
-            }
-            else if(geschwindigkeit>0 && geschwindigkeit<11)
-            {
-                return "schleicht.";
-            }
-            else if(geschwindigkeit>10 && geschwindigkeit<51)
-            {
-                return "fährt langsam.";
-            }
-            else if(geschwindigkeit>50 && geschwindigkeit<101)
-            {
-                return "fährt schnell.";
-            }
-            else if(geschwindigkeit>100)
-            {
-                return "rast.";
-            }
-            else
-            {
-                return "Gibt's nicht!";
+                case 0:
+                    return "steht";
+                case > 0 and <= 10:
+                    return "schleicht";
+                case >10 and <=50:
+                    return "fährt langsam";
+                case >50 and <=100:
+                    return "fährt schnell";
+                case >100:
+                    return "rast";
+                default:
+                    return "auto kaputt";
             }
         }
     }
