@@ -6,49 +6,84 @@ namespace HelloWorld
     {
         static void Main(string[] args)
         {
-            /*
-                Erstelle ein Array mit folgenden Zahlen [20,50,11,2,49]
-                Gebe die Werte innerhalb des Arrays nacheinander aus
-                Gebe die Werte innerhalb des Arrays rückwärts aus
-                Gebe die Werte in einer sortierten Reihenfolge aus ([20,50,11,2,49] => [2,11,20,49,50]) (Sort Ascending)
-                Gebe die Werte in einer sortierten Reihenfolge rückwärts aus ([20,50,11,2,49] => [50,49,20,11,2]) (Sort Descending)
+            /* 
+           Erzeuge eine ganzzahlige Zufallszahl k im Bereich[0...36]. die Zahl k ist das Ergebnis 
+           eines Roulette-Wurf. Simuliere nun das Spiel: 
+            •   Sie gehen mit $10.000 in ein Spielkasino und setzen $10 auf Pair: 
+                o   Wenn k gerade ist und k ungleich 0 ist, erhalten Sie nach dem nächsten Spiel $20 (Gewinn = doppelter Einsatz bei Erfolg). 
+                o   Wenn k=0, bleibt Ihr Einsatz bestehen.
+                o   Wenn k ungerade ist, verlieren Sie Ihren Einsatz. 
+            •   Du machst n Spiele mit der folgenden Strategie: 
+                o   Wenn du mindestens $10.000 besitzt und das letzte Spiel gewonnen hast, setze $10. 
+                o   Wenn du mindestens 10.000 $ besitzt, aber das letzte Spiel verloren hast, verdoppelst du deinen Einsatz. 
+                o   Wenn du weniger als 10.000 $ hast, verdoppelst du deinen Gesamtverlust. 
+                o   Wenn dein Geld für den geplanten Zug nicht ausreicht, wird das komplette Restkapital eingesetzt. 
+                o   Wenn du den maximal zulässigen Einsatz von $1.000 überschreiten würdest, setzt du nur $1.000. 
+            Gebe für jedes Spiel die folgenden Informationen an: 
+            Anzahl des Spiels, die geworfene Zahl, Kapital davor, Kapital danach, Verwende dazu die Methode String. Format mit dem $ -Operator.
+
             */
-
-            int[] myArray = {20,50,11,2,49};
-
-            Console.WriteLine("Ausgabe nacheinander");
-            for(int i=0; i<myArray.Length; i++)
-            {
-                Console.WriteLine(myArray[i]);
-            }
-            /*
-            Console.WriteLine("Ausgabe nacheinander mit FOREACH");
-            foreach(int x in myArray)
-            {
-                Console.WriteLine(x);
-            }
-            */
-
-            Console.WriteLine("Ausgabe rückwärts");
-            for(int i=myArray.Length-1; i>=0; i--)
-            {
-                Console.WriteLine(myArray[i]);
-            }
-
+            Random random = new Random();
             
-            Array.Sort(myArray);
-            Console.WriteLine("Ausgabe sortiert nacheinander");
-            for(int i=0;i<myArray.Length;i++)
+            int kapital = 10000;
+            int anzahlSpiele = 0; 
+            bool lostLastGame = false;
+            int lastInset = 10;
+            int geworfeneZahl = 0;
+            while(kapital>0 || kapital > 20000) 
             {
-                Console.WriteLine(myArray[i]);
-            }
+                lastInset = BerechneEinsatz(kapital, lostLastGame, lastInset, geworfeneZahl);
 
-            Console.WriteLine("Ausgabe sortiert rückwärts");
-            for(int i=myArray.Length-1; i>=0; i--)
-            {
-                Console.WriteLine(myArray[i]);
+                if(lastInset > kapital)
+                {
+                    lastInset = kapital;
+                }
+
+                kapital -= lastInset;
+                geworfeneZahl = random.Next(0,37);
+                anzahlSpiele += 1;
+
+                if(geworfeneZahl % 2 == 0 && geworfeneZahl != 0) 
+                {
+                    kapital = kapital + 2*lastInset;
+                    lostLastGame = false;
+                }
+                else
+                {
+                    lostLastGame = true;
+                }
+                Console.WriteLine($"Anzahl Spiel: {anzahlSpiele}, Geworfene Zahl {geworfeneZahl}, Aktuelles Kapital: {kapital}, Letzter Einsatz: {lastInset}");
+
+                Thread.Sleep(10);
             }
-            
         }
+
+        static int BerechneEinsatz(int kapital, bool lostLastGame, int lastInset, int geworfeneZahl)
+        {
+            if(geworfeneZahl == 0)
+            {
+                return lastInset;
+            }
+
+            if(lostLastGame == false && kapital > 10000)
+            {
+                return 10;
+            }
+            else if (lostLastGame == true && kapital > 10000)
+            {
+                return Math.Min(lastInset*2,1000);
+            }
+
+            if(kapital < 10000)
+            {
+                int gesamtVerlust = 10000-kapital;
+                return Math.Min(gesamtVerlust *2, 1000);
+            }
+
+            //Trifft nie zu aber C# will den case.
+            return 10;
+        }
+
+        
     }
 }
